@@ -1,0 +1,38 @@
+[package]
+name = "simsum"
+version = "0.1.0"
+edition = "2021"
+authors = ["Aaron Clauss"]
+description = "Toy with Rust and Bevy"
+license = "MIT"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+bevy_egui = "0.24.0"
+rand = "0.8.5"
+
+[dependencies.bevy]
+version = "0.12.1"
+default-features = false
+features = [
+    "multi-threaded",
+    "bevy_winit",         # Window management
+    "bevy_render",        # Rendering framework core
+    "bevy_core_pipeline", # Common rendering abstractions
+    "bevy_sprite",        # 2D (sprites) rendering
+    # Platform-specific:
+    "x11",                   # Linux: Support X11 windowing system
+    "webgl2",
+    "dynamic_linking",
+]
+# # Enable a small amount of optimization in debug mode
+[profile.dev]
+opt-level = 1
+
+# Enable high optimizations for dependencies (incl. Bevy), but not for our code:
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.release]
+opt-level = 's'
+lto = "thin"
