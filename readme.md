@@ -7,7 +7,7 @@ Scroll to zoom\
 K pauses the simulation\
 L runs the next step in the simulation\
 Left Click toggles a square\
-R resets the map | conflicts\
+R resets the map | conflicts
 
 ### Known problems
 These will probably never be fixed
