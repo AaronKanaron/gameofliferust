@@ -148,7 +148,7 @@ fn system_draw_new_cells(
 ) {
     for (entity, position) in query.iter() {
         let highest_pos_value: f32 = return_highest_value(position.x.abs(), position.y.abs()) as f32 % (GENERATION_SIZE as f32 * 1.5);
-        let color_boundaries: f32 = GENERATION_SIZE as f32 / 10.;
+        let color_boundaries: f32 = GENERATION_SIZE as f32 / 2.;
         let percentage_half_generation_size: f32 = highest_pos_value / color_boundaries;
         commands.entity(entity)
             .insert(SpriteBundle {

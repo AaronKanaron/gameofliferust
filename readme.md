@@ -14,3 +14,4 @@ These will probably never be fixed
 * * *
 Will crash if you reset the grid before stopping the simulation (K)
 The grid lines do not work and crash the game when enabled
+Crashes sometimes when placing down a new square while the simulation is running
